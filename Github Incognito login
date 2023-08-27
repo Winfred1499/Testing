@@ -1,0 +1,13 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+def Github_login():
+    chrome_options = Options()
+    chrome_options.add_argument('--incognito')
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
+    driver.get('https://github.com/login')
+    driver.find_element(By.NAME,'login').send_keys('Username or email address')
+    driver.find_element(By.NAME,'password').send_keys('Password')
+    driver.find_element(By.NAME,'commit').click()
+Github_login()
