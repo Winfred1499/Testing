@@ -1,0 +1,10 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+def AP_login():
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.get('http://192.168.xx.x/')
+    driver.find_element(By.ID,'tf1_userName').send_keys('admin')
+    driver.find_element(By.ID,'tf1_password').send_keys('password')
+    driver.find_element(By.NAME, 'button.login.users.dashboard').click()
+AP_login()
